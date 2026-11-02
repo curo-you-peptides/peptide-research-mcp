@@ -69,6 +69,7 @@ This repository is also a plugin package that connects the server and adds one s
 
 - `plugin.json` and `mcp.json`: Agent Plugins format (Hermes Agent)
 - `.claude-plugin/plugin.json` and `.mcp.json`: Claude Code plugin format
+- `.cursor-plugin/plugin.json`: Cursor plugin format
 - `openclaw.plugin.json`: OpenClaw (ClawHub)
 
 Install the skill with the `skills` CLI:
