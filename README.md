@@ -2,6 +2,7 @@
 
 [![MCP Badge](https://lobehub.com/badge/mcp/curo-you-peptides-peptide-research-mcp)](https://lobehub.com/mcp/curo-you-peptides-peptide-research-mcp)
 [![Curo Peptide Research MCP connector](https://glama.ai/mcp/connectors/you.curo/peptide-research/badges/score.svg)](https://glama.ai/mcp/connectors/you.curo/peptide-research)
+[![skills.sh](https://skills.sh/b/curo-you-peptides/peptide-research-mcp)](https://skills.sh/curo-you-peptides/peptide-research-mcp)
 
 Peptide research for your AI: PepBank study findings plus the curo.you peptide catalog and lot COAs.
 
@@ -69,6 +70,12 @@ This repository is also a plugin package that connects the server and adds one s
 - `plugin.json` and `mcp.json`: Agent Plugins format (Hermes Agent)
 - `.claude-plugin/plugin.json` and `.mcp.json`: Claude Code plugin format
 - `openclaw.plugin.json`: OpenClaw (ClawHub)
+
+Install the skill with the `skills` CLI:
+
+```
+npx skills add curo-you-peptides/peptide-research-mcp
+```
 
 ## Questions to try
 
