@@ -1,0 +1,16 @@
+{
+  "name": "curo-peptides",
+  "version": "1.0.0",
+  "description": "Peptide research for your AI: PepBank study findings plus the curo.you peptide catalog and lot COAs.",
+  "keywords": ["peptides", "peptide-research", "pepbank", "coa", "lab-reports", "mcp", "mcp-server", "model-context-protocol"],
+  "homepage": "https://curo.you/mcp",
+  "repository": { "type": "git", "url": "git+https://github.com/curo-you-peptides/peptide-research-mcp.git" },
+  "bugs": { "url": "https://github.com/curo-you-peptides/peptide-research-mcp/issues" },
+  "author": { "name": "Curo", "email": "info@curo.you", "url": "https://curo.you" },
+  "license": "MIT",
+  "type": "module",
+  "bin": { "curo-peptides": "bin/curo-peptides.mjs" },
+  "files": ["bin/", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "mcpName": "you.curo/peptide-research"
+}

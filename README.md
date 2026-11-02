@@ -43,6 +43,23 @@ Gemini CLI (`settings.json`):
 
 Steps for Gemini, Grok, Perplexity, Muse and other apps: https://curo.you/mcp
 
+## Command line and local server (npm)
+
+The `curo-peptides` package runs the same server over stdio for apps that need a local server, and answers from the terminal:
+
+```
+npx curo-peptides research BPC-157
+npx curo-peptides search tendon healing
+npx curo-peptides products
+npx curo-peptides coa <lot number>
+```
+
+Local server config for MCP apps:
+
+```json
+{ "mcpServers": { "curo": { "command": "npx", "args": ["-y", "curo-peptides"] } } }
+```
+
 ## Tools
 
 | Tool | What it does |
