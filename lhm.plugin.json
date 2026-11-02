@@ -1,0 +1,224 @@
+{
+  "author": "Curo",
+  "authorUrl": "https://curo.you",
+  "cloudEndpoint": "https://mcp.curo.you/mcp",
+  "description": "Peptide research for your AI: PepBank study findings plus the curo.you peptide catalog and lot COAs.",
+  "homepage": "https://curo.you/mcp",
+  "icon": "https://curo.you/icon.png",
+  "identifier": "curo-you-peptides-peptide-research-mcp",
+  "name": "Curo Peptide Research MCP",
+  "prompts": [
+    {
+      "name": "research_peptide",
+      "title": "Peptide research",
+      "description": "Ask what the research says about one peptide.",
+      "arguments": [
+        {
+          "name": "peptide",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "lab_report",
+      "title": "Lab report",
+      "description": "Ask for the lab report (COA) of one lot.",
+      "arguments": [
+        {
+          "name": "lot",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "store_info",
+      "title": "Curo store info",
+      "uri": "curo://store-info",
+      "description": "Shipping, returns, contact and research-use policies.",
+      "mimeType": "application/json"
+    }
+  ],
+  "tools": [
+    {
+      "name": "search_products",
+      "title": "Search products",
+      "description": "Find Curo products by peptide or product name, or list all products when query is empty. Returns name, slug, dose, price in USD, stock, a lab report link and a buy link. Use get_product for every dose of one product with its lot reports. Use peptide_research for what the studies say.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "description": "Peptide or product name, for example BPC-157. Leave empty to list all products.",
+            "type": "string"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "get_product",
+      "title": "Get product",
+      "description": "Read every dose of one Curo product, with price, stock and the lab reports (COAs) for each lot. Call search_products first and pass a slug from its results. Use get_coa when the user gives a lot number.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "description": "The slug field from a search_products or get_product result."
+          }
+        },
+        "required": [
+          "slug"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "build_cart",
+      "title": "Build cart",
+      "description": "Make a curo.you cart link for products and quantities. Use it only when the user wants to buy. It does not place an order or take payment: the user opens cart_link, then checks out and pays on curo.you. Returns the cart lines and cart_link.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "productId": {
+                  "type": "string",
+                  "description": "The slug field from a search_products or get_product result."
+                },
+                "qty": {
+                  "type": "number",
+                  "description": "Number of units, 1 or more."
+                }
+              },
+              "required": [
+                "productId",
+                "qty"
+              ]
+            },
+            "description": "Products to add to the cart."
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "get_coa",
+      "title": "Get lab reports",
+      "description": "Read third-party lab reports (COAs) by lot number or product. Each report gives the lab, lot, test date, identity result, purity, potency, a report link and a link to verify it on the lab's own site. Use it for questions about testing, purity or a lot number. Use get_product for prices and stock.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Lot number from the vial label, or a product name or slug."
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "get_store_info",
+      "title": "Get store info",
+      "description": "Read Curo's shipping, returns, contact and research-use-only policies, with a link to each policy page. Use it for questions about delivery, refunds or how to reach Curo. Product facts come from search_products and get_product.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "peptide_research",
+      "title": "Peptide research",
+      "description": "Read the PepBank brief for one peptide: names and aliases, an evidence summary split into human, animal and lab studies, key findings with citations, regulatory status, and the PepBank credit line to show with the answer. Use it when the user names one peptide. Use search_research for a question across many studies, such as an outcome or a body system. If PepBank has no data, the result gives a PepBank link.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "peptide": {
+            "type": "string",
+            "description": "Peptide name or slug, for example BPC-157 or tb-500."
+          }
+        },
+        "required": [
+          "peptide"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "search_research",
+      "title": "Search research",
+      "description": "Search PepBank study findings across all peptides by topic, outcome or question. Each result gives the finding in plain words, the peptide, the evidence class and its source passages. The response also gives the PepBank credit line to show. Use it for questions like \"which peptides were studied for tendon healing\". Use peptide_research when the user names one peptide.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search words, for example tendon healing or BPC-157 inflammation."
+          },
+          "cursor": {
+            "description": "The next_cursor value from the previous result, to get the next page.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    }
+  ],
+  "version": "1.0.3"
+}
