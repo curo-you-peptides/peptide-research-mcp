@@ -1,0 +1,12 @@
+{
+  "name": "curo-peptide-research",
+  "version": "1.0.0",
+  "description": "Peptide research for your AI: PepBank study findings plus the curo.you peptide catalog and lot COAs.",
+  "author": { "name": "Curo", "url": "https://curo.you" },
+  "homepage": "https://curo.you/mcp",
+  "icon": "./assets/icon.png",
+  "repository": "https://github.com/curo-you-peptides/peptide-research-mcp",
+  "license": "MIT",
+  "keywords": ["peptides", "peptide-research", "pepbank", "coa", "lab-reports", "mcp"],
+  "mcpServers": "./.mcp.json"
+}

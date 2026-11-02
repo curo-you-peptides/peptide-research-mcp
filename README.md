@@ -1,5 +1,8 @@
 # Curo Peptide Research MCP: PepBank Studies, Peptide Lookup and Lab Reports (COAs)
 
+[![MCP Badge](https://lobehub.com/badge/mcp/curo-you-peptides-peptide-research-mcp)](https://lobehub.com/mcp/curo-you-peptides-peptide-research-mcp)
+[![Curo Peptide Research MCP connector](https://glama.ai/mcp/connectors/you.curo/peptide-research/badges/score.svg)](https://glama.ai/mcp/connectors/you.curo/peptide-research)
+
 Peptide research for your AI: PepBank study findings plus the curo.you peptide catalog and lot COAs.
 
 Curo MCP connects your AI to peptide research and to Curo (https://curo.you). Add it to Claude, ChatGPT, Gemini, Grok, Perplexity or another MCP app. Your AI can then answer peptide questions from PepBank (https://pepbank.io), a free peptide research database, with study summaries, findings and a link to each source. It can also look up peptides in the Curo catalog (https://curo.you/product-catalog), with the third-party lab report for each lot (https://curo.you/coa), prices, stock and shipping. Server address: https://mcp.curo.you. Setup guide: https://curo.you/mcp.
@@ -50,6 +53,22 @@ Steps for Gemini, Grok, Perplexity, Muse and other apps: https://curo.you/mcp
 | `get_coa` | Reads the lab reports for a lot number or a product |
 | `get_store_info` | Reads shipping, returns, contact and research-use policies |
 | `build_cart` | Makes a cart link. You check out and pay on curo.you |
+
+## Prompts and resources
+
+| Name | Type | What it does |
+|---|---|---|
+| `research_peptide` | Prompt | Asks what the research says about one peptide |
+| `lab_report` | Prompt | Asks for the lab report (COA) of one lot |
+| `curo://store-info` | Resource | Shipping, returns, contact and research-use policies |
+
+## Plugin package
+
+This repository is also a plugin package that connects the server and adds one skill, `skills/curo-peptide-research/SKILL.md`.
+
+- `plugin.json` and `mcp.json`: Agent Plugins format (Hermes Agent)
+- `.claude-plugin/plugin.json` and `.mcp.json`: Claude Code plugin format
+- `openclaw.plugin.json`: OpenClaw (ClawHub)
 
 ## Questions to try
 

@@ -1,0 +1,8 @@
+{
+  "id": "curo-peptide-research",
+  "name": "Curo Peptide Research MCP",
+  "description": "Peptide research for your AI: PepBank study findings plus the curo.you peptide catalog and lot COAs.",
+  "version": "1.0.0",
+  "icon": "https://curo.you/icon.png",
+  "categories": ["research"]
+}
