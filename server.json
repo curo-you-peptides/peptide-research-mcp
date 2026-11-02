@@ -3,8 +3,12 @@
   "name": "you.curo/peptide-research",
   "title": "Curo Peptide Research MCP: PepBank Studies, Peptide Lookup and Lab Reports (COAs)",
   "description": "Peptide research for your AI: PepBank study findings plus the curo.you peptide catalog and lot COAs.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "websiteUrl": "https://curo.you/mcp",
+  "repository": {
+    "url": "https://github.com/curo-you-peptides/peptide-research-mcp",
+    "source": "github"
+  },
   "icons": [
     {
       "src": "https://curo.you/icon.png",
