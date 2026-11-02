@@ -1,0 +1,23 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "you.curo/peptide-research",
+  "title": "Curo Peptide Research MCP: PepBank Studies, Peptide Lookup and Lab Reports (COAs)",
+  "description": "Peptide research for your AI: PepBank study findings plus the curo.you peptide catalog and lot COAs.",
+  "version": "1.0.1",
+  "websiteUrl": "https://curo.you/mcp",
+  "icons": [
+    {
+      "src": "https://curo.you/icon.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.curo.you/mcp"
+    }
+  ]
+}

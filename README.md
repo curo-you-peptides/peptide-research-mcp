@@ -1,0 +1,69 @@
+# Curo Peptide Research MCP: PepBank Studies, Peptide Lookup and Lab Reports (COAs)
+
+Peptide research for your AI: PepBank study findings plus the curo.you peptide catalog and lot COAs.
+
+Curo MCP connects your AI to peptide research and to Curo (https://curo.you). Add it to Claude, ChatGPT, Gemini, Grok, Perplexity or another MCP app. Your AI can then answer peptide questions from PepBank (https://pepbank.io), a free peptide research database, with study summaries, findings and a link to each source. It can also look up peptides in the Curo catalog (https://curo.you/product-catalog), with the third-party lab report for each lot (https://curo.you/coa), prices, stock and shipping. Server address: https://mcp.curo.you. Setup guide: https://curo.you/mcp.
+
+## Server address
+
+```
+https://mcp.curo.you
+```
+
+Transport: Streamable HTTP. The server runs at this address. `https://mcp.curo.you/mcp` reaches the same server. This repository holds its listing files.
+
+## Add it to your AI app
+
+Claude: open Customize, then Connectors. Select Add custom connector. Name it Curo and enter `https://mcp.curo.you`.
+
+ChatGPT: open Plugins. Select +, then Add custom MCP server. Name it Curo and enter `https://mcp.curo.you`.
+
+Claude Code:
+
+```
+claude mcp add --transport http curo https://mcp.curo.you
+```
+
+Codex (`config.toml`):
+
+```toml
+[mcp_servers.curo]
+url = "https://mcp.curo.you"
+```
+
+Gemini CLI (`settings.json`):
+
+```json
+{ "mcpServers": { "curo": { "httpUrl": "https://mcp.curo.you" } } }
+```
+
+Steps for Gemini, Grok, Perplexity, Muse and other apps: https://curo.you/mcp
+
+## Tools
+
+| Tool | What it does |
+|---|---|
+| `peptide_research` | Reads the PepBank summary, main findings, sources and credit for one peptide |
+| `search_research` | Searches PepBank study findings, with sources and credit for each result |
+| `search_products` | Finds Curo products by name, or lists all products |
+| `get_product` | Reads product variants, prices, stock and lot reports |
+| `get_coa` | Reads the lab reports for a lot number or a product |
+| `get_store_info` | Reads shipping, returns, contact and research-use policies |
+| `build_cart` | Makes a cart link. You check out and pay on curo.you |
+
+## Questions to try
+
+- What does the research say about TB-500?
+- Show me the lab report for my lot number.
+- Which Curo peptides are in stock right now?
+- How long does shipping take?
+
+## Links
+
+- Curo: https://curo.you
+- Peptide catalog: https://curo.you/product-catalog
+- Lab reports (COAs): https://curo.you/coa
+- PepBank: https://pepbank.io
+- Official MCP Registry entry: [`you.curo/peptide-research`](https://registry.modelcontextprotocol.io/?q=you.curo)
+
+Curo products are for laboratory research use only. Nothing here is medical advice.
