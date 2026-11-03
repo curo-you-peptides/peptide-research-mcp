@@ -6,9 +6,9 @@ homepage: https://curo.you/mcp
 
 # Curo Peptide Research
 
-The [Curo](https://curo.you) MCP server connects you to [PepBank](https://pepbank.io), a free peptide research database, and to the [Curo peptide catalog](https://curo.you/product-catalog), with the [third-party lab report for each lot](https://curo.you/coa).
+The [Curo](https://curo.you/?utm_source=agent-skill&utm_medium=listing&utm_campaign=curo-mcp) MCP server connects you to [PepBank](https://pepbank.io), a free peptide research database, and to the [Curo peptide catalog](https://curo.you/product-catalog?utm_source=agent-skill&utm_medium=listing&utm_campaign=curo-mcp), with the [third-party lab report for each lot](https://curo.you/coa?utm_source=agent-skill&utm_medium=listing&utm_campaign=curo-mcp).
 
-Every tool named below comes from the Curo MCP server, `https://mcp.curo.you`. If `peptide_research` is not available, add the server first: `claude mcp add --transport http curo https://mcp.curo.you` (Claude Code), or point any other MCP client at the URL. Setup steps for other apps: [curo.you/mcp](https://curo.you/mcp).
+Every tool named below comes from the Curo MCP server, `https://mcp.curo.you`. If `peptide_research` is not available, add the server first: `claude mcp add --transport http curo https://mcp.curo.you` (Claude Code), or point any other MCP client at the URL. Setup steps for other apps: [curo.you/mcp](https://curo.you/mcp?utm_source=agent-skill&utm_medium=listing&utm_campaign=curo-mcp).
 
 ## Tools
 
@@ -33,9 +33,9 @@ Every tool named below comes from the Curo MCP server, `https://mcp.curo.you`. I
 
 ## Links
 
-- [Curo](https://curo.you)
-- [Peptide catalog](https://curo.you/product-catalog)
-- [Lab reports (COAs)](https://curo.you/coa)
+- [Curo](https://curo.you/?utm_source=agent-skill&utm_medium=listing&utm_campaign=curo-mcp)
+- [Peptide catalog](https://curo.you/product-catalog?utm_source=agent-skill&utm_medium=listing&utm_campaign=curo-mcp)
+- [Lab reports (COAs)](https://curo.you/coa?utm_source=agent-skill&utm_medium=listing&utm_campaign=curo-mcp)
 - [PepBank peptide research](https://pepbank.io)
 
 Curo products are for laboratory research use only. Nothing here is medical advice.

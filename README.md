@@ -6,7 +6,7 @@
 
 Peptide research for your AI: PepBank study findings plus the curo.you peptide catalog and lot COAs.
 
-Curo MCP connects your AI to peptide research and to Curo (https://curo.you). Add it to Claude, ChatGPT, Gemini, Grok, Perplexity or another MCP app. Your AI can then answer peptide questions from PepBank (https://pepbank.io), a free peptide research database, with study summaries, findings and a link to each source. It can also look up peptides in the Curo catalog (https://curo.you/product-catalog), with the third-party lab report for each lot (https://curo.you/coa), prices, stock and shipping. Server address: https://mcp.curo.you. Setup guide: https://curo.you/mcp.
+Curo MCP connects your AI to peptide research and to Curo ([curo.you](https://curo.you/?utm_source=github&utm_medium=listing&utm_campaign=curo-mcp)). Add it to Claude, ChatGPT, Gemini, Grok, Perplexity or another MCP app. Your AI can then answer peptide questions from PepBank (https://pepbank.io), a free peptide research database, with study summaries, findings and a link to each source. It can also look up peptides in the Curo catalog ([curo.you/product-catalog](https://curo.you/product-catalog?utm_source=github&utm_medium=listing&utm_campaign=curo-mcp)), with the third-party lab report for each lot ([curo.you/coa](https://curo.you/coa?utm_source=github&utm_medium=listing&utm_campaign=curo-mcp)), prices, stock and shipping. Server address: https://mcp.curo.you. Setup guide: [curo.you/mcp](https://curo.you/mcp?utm_source=github&utm_medium=listing&utm_campaign=curo-mcp).
 
 ## Server address
 
@@ -41,7 +41,7 @@ Gemini CLI (`settings.json`):
 { "mcpServers": { "curo": { "httpUrl": "https://mcp.curo.you" } } }
 ```
 
-Steps for Gemini, Grok, Perplexity, Muse and other apps: https://curo.you/mcp
+Steps for Gemini, Grok, Perplexity, Muse and other apps: [curo.you/mcp](https://curo.you/mcp?utm_source=github&utm_medium=listing&utm_campaign=curo-mcp)
 
 ## Command line and local server (npm)
 
@@ -104,9 +104,9 @@ npx skills add curo-you-peptides/peptide-research-mcp
 
 ## Links
 
-- Curo: https://curo.you
-- Peptide catalog: https://curo.you/product-catalog
-- Lab reports (COAs): https://curo.you/coa
+- [Curo](https://curo.you/?utm_source=github&utm_medium=listing&utm_campaign=curo-mcp)
+- [Peptide catalog](https://curo.you/product-catalog?utm_source=github&utm_medium=listing&utm_campaign=curo-mcp)
+- [Lab reports (COAs)](https://curo.you/coa?utm_source=github&utm_medium=listing&utm_campaign=curo-mcp)
 - PepBank: https://pepbank.io
 - Official MCP Registry entry: [`you.curo/peptide-research`](https://registry.modelcontextprotocol.io/?q=you.curo)
 

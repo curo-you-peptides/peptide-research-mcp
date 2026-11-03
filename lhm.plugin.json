@@ -1,9 +1,9 @@
 {
   "author": "Curo",
-  "authorUrl": "https://curo.you",
+  "authorUrl": "https://curo.you/?utm_source=lobehub&utm_medium=listing&utm_campaign=curo-mcp",
   "cloudEndpoint": "https://mcp.curo.you/mcp",
   "description": "Peptide research for your AI: PepBank study findings plus the curo.you peptide catalog and lot COAs.",
-  "homepage": "https://curo.you/mcp",
+  "homepage": "https://curo.you/mcp?utm_source=lobehub&utm_medium=listing&utm_campaign=curo-mcp",
   "icon": "https://curo.you/icon.png",
   "identifier": "curo-you-peptides-peptide-research-mcp",
   "name": "Curo Peptide Research MCP",
