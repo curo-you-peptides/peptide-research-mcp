@@ -130,7 +130,7 @@
     {
       "name": "get_coa",
       "title": "Get lab reports",
-      "description": "Read third-party lab reports (COAs) by lot number or product. Each report gives the lab, lot, test date, identity result, purity, potency, a report link and a link to verify it on the lab's own site. Use it for questions about testing, purity or a lot number. Use get_product for prices and stock.",
+      "description": "Read third-party lab reports (COAs) by lot number or product. Each report gives the lab, lot, test date, identity result, purity, potency, a report link and a link to verify it on the lab's own site. Use it for questions about testing, purity or a lot number, and to check that a lab report is real. Use get_product for prices and stock.",
       "inputSchema": {
         "type": "object",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -244,5 +244,5 @@
       }
     }
   ],
-  "version": "1.0.4"
+  "version": "1.0.5"
 }
