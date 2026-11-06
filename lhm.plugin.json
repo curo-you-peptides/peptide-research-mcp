@@ -47,13 +47,13 @@
       "description": "Find Curo products by peptide or product name, or list all products when query is empty. Returns name, slug, dose, price in USD, stock, a lab report link and a buy link. Use get_product for every dose of one product with its lot reports. Use peptide_research for what the studies say.",
       "inputSchema": {
         "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
         "properties": {
           "query": {
             "description": "Peptide or product name, for example BPC-157. Leave empty to list all products.",
             "type": "string"
           }
-        },
-        "$schema": "https://json-schema.org/draft/2020-12/schema"
+        }
       },
       "annotations": {
         "readOnlyHint": true,
@@ -68,6 +68,7 @@
       "description": "Read every dose of one Curo product, with price, stock and the lab reports (COAs) for each lot. Call search_products first and pass a slug from its results. Use get_coa when the user gives a lot number.",
       "inputSchema": {
         "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
         "properties": {
           "slug": {
             "type": "string",
@@ -76,8 +77,7 @@
         },
         "required": [
           "slug"
-        ],
-        "$schema": "https://json-schema.org/draft/2020-12/schema"
+        ]
       },
       "annotations": {
         "readOnlyHint": true,
@@ -92,6 +92,7 @@
       "description": "Make a curo.you cart link for products and quantities. Use it only when the user wants to buy. It does not place an order or take payment: the user opens cart_link, then checks out and pays on curo.you. Returns the cart lines and cart_link.",
       "inputSchema": {
         "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
         "properties": {
           "items": {
             "type": "array",
@@ -117,8 +118,7 @@
         },
         "required": [
           "items"
-        ],
-        "$schema": "https://json-schema.org/draft/2020-12/schema"
+        ]
       },
       "annotations": {
         "readOnlyHint": true,
@@ -133,6 +133,7 @@
       "description": "Read third-party lab reports (COAs) by lot number or product. Each report gives the lab, lot, test date, identity result, purity, potency, a report link and a link to verify it on the lab's own site. Use it for questions about testing, purity or a lot number. Use get_product for prices and stock.",
       "inputSchema": {
         "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
         "properties": {
           "query": {
             "type": "string",
@@ -141,8 +142,7 @@
         },
         "required": [
           "query"
-        ],
-        "$schema": "https://json-schema.org/draft/2020-12/schema"
+        ]
       },
       "annotations": {
         "readOnlyHint": true,
@@ -157,8 +157,8 @@
       "description": "Read Curo's shipping, returns, contact and research-use-only policies, with a link to each policy page. Use it for questions about delivery, refunds or how to reach Curo. Product facts come from search_products and get_product.",
       "inputSchema": {
         "type": "object",
-        "properties": {},
-        "$schema": "https://json-schema.org/draft/2020-12/schema"
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {}
       },
       "annotations": {
         "readOnlyHint": true,
@@ -173,6 +173,7 @@
       "description": "Read the PepBank brief for one peptide: names and aliases, an evidence summary split into human, animal and lab studies, key findings with citations, regulatory status, and the PepBank credit line to show with the answer. Use it when the user names one peptide. Use search_research for a question across many studies, such as an outcome or a body system. If PepBank has no data, the result gives a PepBank link.",
       "inputSchema": {
         "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
         "properties": {
           "peptide": {
             "type": "string",
@@ -181,8 +182,7 @@
         },
         "required": [
           "peptide"
-        ],
-        "$schema": "https://json-schema.org/draft/2020-12/schema"
+        ]
       },
       "annotations": {
         "readOnlyHint": true,
@@ -197,6 +197,7 @@
       "description": "Search PepBank study findings across all peptides by topic, outcome or question. Each result gives the finding in plain words, the peptide, the evidence class and its source passages. The response also gives the PepBank credit line to show. Use it for questions like \"which peptides were studied for tendon healing\". Use peptide_research when the user names one peptide.",
       "inputSchema": {
         "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
         "properties": {
           "query": {
             "type": "string",
@@ -209,8 +210,31 @@
         },
         "required": [
           "query"
-        ],
-        "$schema": "https://json-schema.org/draft/2020-12/schema"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "use_and_dose",
+      "title": "Use and dose",
+      "description": "Read what community sources report about how people use one peptide: uses, route, amount, frequency, duration, reported effects and cautions, each line with its sources. Also read the doses from published studies, with species, route, study design and source. Community reports are not tested in trials. Use it for use, dose or cycle questions. Use peptide_research for what the studies found. A peptide can have no record.",
+      "inputSchema": {
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "peptide": {
+            "type": "string",
+            "description": "Peptide name or slug, for example BPC-157 or tb-500."
+          }
+        },
+        "required": [
+          "peptide"
+        ]
       },
       "annotations": {
         "readOnlyHint": true,
@@ -220,5 +244,5 @@
       }
     }
   ],
-  "version": "1.0.3"
+  "version": "1.0.4"
 }
