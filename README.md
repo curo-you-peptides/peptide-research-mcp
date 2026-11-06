@@ -66,6 +66,7 @@ Local server config for MCP apps:
 |---|---|
 | `peptide_research` | Reads the PepBank summary, main findings, sources and credit for one peptide |
 | `search_research` | Searches PepBank study findings, with sources and credit for each result |
+| `use_and_dose` | Reads community-reported use and dose for one peptide, with sources, and the doses from published studies |
 | `search_products` | Finds Curo products by name, or lists all products |
 | `get_product` | Reads product variants, prices, stock and lot reports |
 | `get_coa` | Reads the lab reports for a lot number or a product |

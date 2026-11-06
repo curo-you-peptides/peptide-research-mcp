@@ -3,7 +3,7 @@
 // Curo MCP server at https://mcp.curo.you. No dependencies. Node 18 or later.
 import { createInterface } from "node:readline";
 
-const VERSION = "1.0.2";
+const VERSION = "1.0.3";
 const SERVER = process.env.CURO_MCP_URL || "https://mcp.curo.you/mcp";
 const HELP = `curo-peptides ${VERSION}
 Peptide research for your AI: PepBank study findings plus the curo.you peptide catalog and lot COAs.
